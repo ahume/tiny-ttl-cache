@@ -1,7 +1,7 @@
 /**
   * TTL cache implementation
   * Items cached in object hash and ordered in array.
-  * All async operations are O(1), 'put' schedules a cleanup O(n) if required.
+  * All synchronous operations are O(1), 'put' schedules a cleanup O(n) if required.
   */
 
 

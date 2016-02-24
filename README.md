@@ -2,13 +2,13 @@
 
 > Simple TTL cache. put and get.
 
+Suitable for use in browsers and Node.js.
 
 ## Install
 
 ```sh
 $ npm install --save tiny-ttl-cache
 ```
-
 
 ## Usage
 
@@ -25,6 +25,7 @@ cache.get('key'); // returns 'value'
 // 10 seconds later
 cache.get('key'); // returns null
 
+cache.flush(); // Empties the cache
 ```
 
 ### TTL Eviction Policy
@@ -40,8 +41,7 @@ npm test
 
 ## License
 
-MIT © [Andy Hume](2015)
-
+MIT © [Andy Hume](2016)
 
 [npm-image]: https://badge.fury.io/js/tiny-ttl-cache.svg
 [npm-url]: https://npmjs.org/package/tiny-ttl-cache
