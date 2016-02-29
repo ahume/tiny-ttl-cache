@@ -20,6 +20,7 @@ TTLCache.prototype.put = function (key, value) {
         if (this.cacheSize >= this.maxItems) {
             var keyToDelete = this.itemList.pop();
             delete this.cache[keyToDelete];
+            this.cacheSize = this.cacheSize - 1;
         }
         node = {};
         this.cacheSize = this.cacheSize + 1;
@@ -51,6 +52,7 @@ TTLCache.prototype.scheduleExpiryFlush = function (expiryTime) {
             if (this.cache[key].ttl > now) {
                 this.itemList.pop();
                 delete this.cache[key];
+                this.cacheSize = this.cacheSize - 1;
             } else {
                 // We've hit the first one that hasn't expired. Stop.
                 break;
